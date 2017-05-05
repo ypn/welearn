@@ -39,6 +39,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     key: 'your-pusher-key'
 // });
 
+//Import laravel-echo for realtime chat
 import Echo from "laravel-echo"
 
 window.Echo = new Echo({
