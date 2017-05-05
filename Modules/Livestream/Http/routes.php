@@ -4,4 +4,8 @@ Route::group(['middleware' => 'web', 'prefix' => 'livestream', 'namespace' => 'M
 {
     Route::get('/', 'LivestreamController@index');
     Route::get('/home', 'LivestreamController@home');
+
+    Route::get('/ccc',function(){
+      event(new Modules\Livestream\Events\ChatEvent());
+    });
 });

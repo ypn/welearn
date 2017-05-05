@@ -13,8 +13,7 @@ const { mix } = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
-
-   .sass('Modules/Frontend/Assets/sass/frontend.scss','public/modules/css')
-
+   //Live stream module assets
    .js('Modules/Livestream/Assets/js/livestream.js','public/modules/livestream/js')
+   .react('Modules/Livestream/Assets/js/components/Chat.jsx','public/modules/livestream/js/components');
    ;

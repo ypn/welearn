@@ -6,7 +6,8 @@
     "active": 1,
     "order": 0,
     "providers": [
-        "Modules\\Livestream\\Providers\\LivestreamServiceProvider"
+        "Modules\\Livestream\\Providers\\LivestreamServiceProvider",
+        "Modules\\Livestream\\Providers\\EventServiceProvider"
     ],
     "aliases": {},
     "files": [

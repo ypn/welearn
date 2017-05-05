@@ -14,7 +14,7 @@ class LivestreamController extends Controller
      */
     public function index()
     {
-        return view('livestream::layouts.home');
+        return view('livestream::layouts.channel');
     }
 
     public function home(){
