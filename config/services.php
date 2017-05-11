@@ -35,8 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
     'facebook'=>[
-      'app_id' => '1914762422128491',
-      'app_secret' => '38df9d11ac744f175f312357e2fd70e4',
+      'app_id' => '1288241967885581',
+      'app_secret' => 'b2d98c55d198bc3ddc68f3ef2113ad75',
       'default_graph_version' => 'v2.8',
     ]
 
