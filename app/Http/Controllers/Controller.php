@@ -34,14 +34,14 @@ class Controller extends BaseController
 
         $fb = new \Facebook\Facebook([
           'app_id' => config('services.facebook.app_id'),
-          'app_secret' => config('services.facebook.app_secret'),
+          'app_secret' => config('services.facebook.app_id'),
           'default_graph_version' => 'v2.8',
         ]);
 
         $helper = $fb->getRedirectLoginHelper();
 
         $permissions = ['email']; // Optional permissions
-        $loginUrl = $helper->getLoginUrl('http://ypn.tv/user/fb-login', $permissions);
+        $loginUrl = $helper->getLoginUrl(url('/') . '/user/fb-login', $permissions);
 
         return view('welcome',array('fb_url'=>$loginUrl));
       }else{
