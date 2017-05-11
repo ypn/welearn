@@ -26,11 +26,16 @@ class Controller extends BaseController
         if (!session_id()) {
             session_start();
         }
+        // $fb = new \Facebook\Facebook([
+        //   'app_id' => '1288241967885581',
+        //   'app_secret' => 'b2d98c55d198bc3ddc68f3ef2113ad75',
+        //   'default_graph_version' => 'v2.8',
+        // ]);
+
         $fb = new \Facebook\Facebook([
-          'app_id' => '1288241967885581',
-          'app_secret' => 'b2d98c55d198bc3ddc68f3ef2113ad75',
+          'app_id' => config('services.facebook.app_id'),
+          'app_secret' => config('services.facebook.app_secret'),
           'default_graph_version' => 'v2.8',
-          //'default_access_token' => '{access-token}', // optional
         ]);
 
         $helper = $fb->getRedirectLoginHelper();

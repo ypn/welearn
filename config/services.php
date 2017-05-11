@@ -34,5 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'facebook'=>[
+      'app_id' => '1914762422128491',
+      'app_secret' => '38df9d11ac744f175f312357e2fd70e4',
+      'default_graph_version' => 'v2.8',
+    ]
 
 ];
