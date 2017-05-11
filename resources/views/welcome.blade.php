@@ -7,11 +7,11 @@
 <head>
 	<!-- Basic Page Needs
 	================================================== -->
-    <title>University Landing Page</title>
+    <title>Together, we learn! Together, we conquer!</title>
     <meta charset="utf-8" />
 	<meta name="description" content="Coralix Themes">
 	<meta name="author" content="Coralix Themes">
-
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 	<!-- Mobile Specific Metas
 	================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -57,6 +57,56 @@
 
     <!--effect bxslider-->
     <link rel="stylesheet" type="text/css" href="js/bxslider/jquery.bxslider.css" />
+
+    <style>
+    .loginBtn {
+box-sizing: border-box;
+position: relative;
+/* width: 13em;  - apply for fixed size */
+margin: 0.2em;
+padding: 0 15px 0 46px;
+border: none;
+text-align: left;
+line-height: 34px;
+white-space: nowrap;
+border-radius: 0.2em;
+font-size: 16px;
+color: #FFF;
+display: block;
+}
+.loginBtn:before {
+content: "";
+box-sizing: border-box;
+position: absolute;
+top: 0;
+left: 0;
+width: 34px;
+height: 100%;
+}
+.loginBtn:focus {
+outline: none;
+}
+.loginBtn:active {
+box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+
+.loginBtn--facebook {
+  background-color: #4C69BA;
+  background-image: linear-gradient(#4C69BA, #3B55A0);
+  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+  text-shadow: 0 -1px 0 #354C8C;
+}
+.loginBtn--facebook:before {
+  border-right: #364e92 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+}
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+  background-color: #5B7BD5;
+  background-image: linear-gradient(#5B7BD5, #4864B1);
+}
+
+    </style>
 </head>
 
 
@@ -70,8 +120,25 @@
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-sm-12 sb">
-	                <h1><a title="Home" href="index.html">University Landing</a></h1>
-	                <a href="#" title="CTA" class="btn"><i class="icon-phone-1"></i> Call us 555-6562-362</a>
+	                <a title="Home" href="/"><img style="width:75px;" src="img/logo.png" alt=""></a>
+	                <div class="pull-right">
+                    <style media="screen">
+                      #form-signin input{
+                          margin-right:15px;
+                          padding:3px 5px;
+                      }
+
+                      #form-signin input[type="submit"]{
+                        font-weight:bold;
+                      }
+                    </style>
+	                  <form id="form-signin" class="" action="user/login" method="post">
+                      <input type="hidden" name="_token" value="{{csrf_token()}}">
+	                    <input type="text" name="email" placeholder="Email">
+                      <input type="password" name="password" placeholder="Password" >
+                      <input type="submit" value="Đăng nhập">
+	                  </form>
+	                </div>
 	                </div>
 	            </div>
 	        </div>
@@ -93,21 +160,21 @@
 	                </div>
 	                <div class="collapse navbar-collapse navbar-ex1-collapse">
 	                    <ul class="nav navbar-nav">
-	                        <li class="active"><a href="#menu-homepage">Home</a></li>
-	                        <li><a href="#menu-features">Features</a></li>
-	                        <li><a href="#menu-courses">Courses</a></li>
-	                        <li><a href="#menu-pricing">Pricing</a></li>
-	                        <li><a href="#menu-gallery"> Locations</a></li>
-	                        <li><a href="#menu-map">Map</a></li>
-	                        <li><a href="#menu-contact">Contact</a></li>
-	                        <li><a href="http://themeforest.net/user/CoralixThemes" class="external">External</a></li>
+	                        <li class="active"><a href="#menu-homepage">@lang('landingpage.top_menu.home')</a></li>
+	                        <li><a href="#menu-features">@lang('landingpage.top_menu.feature')</a></li>
+	                        <li><a href="#menu-courses">@lang('landingpage.top_menu.course')</a></li>
+	                        <li><a href="#menu-pricing">@lang('landingpage.top_menu.pricing')</a></li>
+	                        <li><a href="#menu-gallery"> @lang('landingpage.top_menu.location')</a></li>
+	                        <li><a href="#menu-map">@lang('landingpage.top_menu.map')</a></li>
+	                        <li><a href="#menu-contact">@lang('landingpage.top_menu.contact')</a></li>
+	                        <li><a href="#" class="external">@lang('landingpage.top_menu.external')</a></li>
 	                    </ul>
 	                    <ul class="nav navbar-nav pull-right">
 	                        <li class="dropdown">
-	                            <a href="#" class="dropdown-toggle social_button" data-toggle="dropdown">Get Social <b class="caret"></b></a>
+	                            <a href="#" class="dropdown-toggle social_button" data-toggle="dropdown">@lang('landingpage.top_menu.get_social')<b class="caret"></b></a>
 	                            <ul class="dropdown-menu">
-	                                <li><a href="https://www.facebook.com/coralixthemespage" class="external"><i class="icon-facebook-1"></i>Facebook</a></li>
-	                                <li><a href="https://twitter.com/coralixthemes" class="external"><i class="icon-twitter-1"></i>Twitter</a></li>
+	                                <li><a href="#" class="external"><i class="icon-facebook-1"></i>Facebook</a></li>
+	                                <li><a href="#" class="external"><i class="icon-twitter-1"></i>Twitter</a></li>
 	                                <li><a href="#" class="external"><i class="icon-googleplus"></i>Google +</a></li>
 	                                <li><a href="#" class="external"><i class="icon-flickr-circled"></i>Flickr</a></li>
 	                                <li><a href="#" class="external"><i class="icon-youtube"></i>Youtube</a></li>
@@ -141,9 +208,9 @@
 
 		        <!-- main form -->
 		        <div class="col-md-4 course-form-box">
-		        	<h3>Subscribe to Get information</h3>
-		            <p>The Best way to help you reach your goals</p>
-		            <form id="curse-form" class="nm" action="join.php" method="post" accept-charset="utf-8">
+		        	<h3>@lang('landingpage.signin_signup.title')</h3>
+		            <p>@lang('landingpage.signin_signup.external')</p>
+		            <form id="curse-form" class="nm" action="user/register" method="post" accept-charset="utf-8">
 
 		                <div  id="loading" style="display: none" class='alert'>
 		                    <a class='close' data-dismiss='alert'>×</a>
@@ -151,50 +218,34 @@
 		                </div>
 		                <div id="response"></div>
 
-						<div class="content_form">
+						              <div class="content_form">
 
-		                        <input class="input-large" type="text" required placeholder="First Name" name="firstname" />
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
 
+                            <input class="input-large" type="text" required placeholder="@lang('landingpage.signin_signup.form_info.first_name')" name="firstname" />
 
-		                        <input class="input-large" type="text" required placeholder="Last Name" name="lastname" />
+		                        <input class="input-large" type="text" required placeholder="@lang('landingpage.signin_signup.form_info.last_name')" name="lastname" />
 
+		                        <input class="input-large" type="email" required placeholder="@lang('landingpage.signin_signup.form_info.email')" name="email" />
 
-		                        <input class="input-large" type="email" required placeholder="*Email" name="email" />
+                            <input class="input-large" type="password" placeholder="Mật khẩu" name="password">
 
+                            <input class="input-large" type="password" placeholder="Xác nhận mật khẩu" name="confirm_password">
 
-		                        <input class="input-large" type="text" required placeholder="Telephone" name="phone" />
-
-
-		                        <select class="input-large chzn-select" name="country">
-		                            <option>Select your Country</option>
-		                            <option>United States</option>
-		                            <option>India</option>
-		                            <option>China</option>
-		                            <option>Canada</option>
-		                        </select>
-
-
-		                        <select class="input-large chzn-select" name="education">
-		                            <option>Your Education Level</option>
-		                            <option>Basic</option>
-		                            <option>Advanced</option>
-		                            <option>Proffesional</option>
-		                            <option>Expert</option>
-		                        </select>
-
-
-		                        <select class="input-large chzn-select" name="curse">
-		                            <option>Courses you want to learn</option>
-		                            <option>Option</option>
-		                            <option>Option</option>
-		                            <option>Option</option>
-		                            <option>Option</option>
-		                        </select>
-
-		                        <button class="btn btn-large btn-primary" type="submit"><i class="icon-edit"></i>request information</button>
-
+		                        <button class="btn btn-large btn-primary"><i class="icon-edit"></i>@lang('landingpage.signin_signup.form_info.btn_request_info')</button>
 		            	</div>
 		            </form>
+
+                <div class="hr" style="text-align:center;">
+                  <hr>
+                  <span style="background:#263d5a;color:#fff;font-size:15px;top:-32px;position:relative;padding:8px;">Or</span>
+                </div>
+
+                <div>
+                  <a href="{{$fb_url}}" class="loginBtn loginBtn--facebook">
+                    Đăng nhập bằng facebook
+                  </a>
+                </div>
 		        </div>
 		        <!-- end main form -->
 
@@ -209,8 +260,8 @@
 
 			<!--title of the section-->
 			<div class="row title">
-		    	<h1>Check Out This Awesome Features</h1>
-		        <h3>Designed to get the highest rate of interaction</h3>
+		    	<h1>@lang('landingpage.feature.title')</h1>
+		        <h3>@lang('landingpage.feature.external')</h3>
 		    </div>
 		    <!--end title of the section-->
 
@@ -270,8 +321,8 @@
 
 	    	<!--title of the section-->
 	    	<div class="row title">
-	        	<h1>Meet all our locations</h1>
-	            <h3>You can learn online, or at our ground locations where you can learn on campus, online, or a blend of both. </h3>
+	        	<h1>@lang('landingpage.location.title')</h1>
+	            <h3>@lang('landingpage.location.external')</h3>
 	        </div>
 	        <!--end title of the section-->
 
@@ -376,8 +427,8 @@
 
         	<!--title of the section-->
         	<div class="row title">
-            	<h1>Loved By Over 25 000 Customer</h1>
-                <h3>What they say about us</h3>
+            	<h1>@lang('landingpage.student_say.title')</h1>
+                <h3>@lang('landingpage.student_say.external')</h3>
             </div>
             <!--end title of the section-->
 
@@ -872,8 +923,8 @@
 		<div class="container" id="menu-contact">
 		    <div class="row">
 		        <div class="col-md-4 course-form-box">
-		            <h3>Subscribe to Get information</h3>
-		            <p>The Best way to help you reach your goalsDonec id elit non mi porta gravida at eget metus. </p><br>
+		            <h3>@lang('landingpage.signin_signup.title')</h3>
+		            <p>@lang('landingpage.signin_signup.external')</p><br>
 		            <p>
 		                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuad.
 		            </p>
@@ -881,16 +932,16 @@
 
 		                <div class="content_form">
 
-		                    <input class="input-large" type="text" required placeholder="Name" name="firstname" />
+		                    <input class="input-large" type="text" required placeholder="@lang('landingpage.signin_signup.form_info.name')" name="firstname" />
 
 
-		                    <input class="input-large" type="email" required placeholder="*Email" name="firstname" />
+		                    <input class="input-large" type="email" required placeholder="*@lang('landingpage.signin_signup.form_info.email')" name="firstname" />
 
 
-		                    <textarea class="text-large"  required placeholder="Telephone" name="tex_msg"></textarea>
+		                    <textarea class="text-large"  required placeholder="@lang('landingpage.signin_signup.form_info.phone')" name="tex_msg"></textarea>
 
 
-		                    <button class="btn btn-large btn-primary" type="submit"><i class="icon-edit"></i>send e-mail</button>
+		                    <button class="btn btn-large btn-primary" type="submit"><i class="icon-edit"></i>@lang('landingpage.signin_signup.form_info.btn_send_email')</button>
 
 		                </div>
 		            </form>

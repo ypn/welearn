@@ -17,9 +17,9 @@
 </head>
 <body>
 <!--button back top-->
-<div id="back-top"><i class="fa fa-arrow-up"></i></div>    
+<div id="back-top"><i class="fa fa-arrow-up"></i></div>
 <div class="main">
-	<div class="div-content">  
+	<div class="div-content">
 
 <!--==============================header=================================-->
 			<header>
@@ -78,7 +78,7 @@
 										 <li id="last-li"><a href="index-5.html">Forums<strong></strong></a></li>
 									</ul>
 								</nav>
-								
+
 							</div>
 						</div>
 					</div>
@@ -95,12 +95,12 @@
 					<div class="fw_video">
 						{{-- <iframe src="https://player.vimeo.com/video/37582150?byline=0&amp;portrait=0&amp;color=ffffff"></iframe> --}}
 
-					<video 
-						id="video" 
-						class="video-js vjs-default-skin vjs-big-play-centered" 
-						controls 
-						preload="none" 					
-						poster="https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-272x380.jpg" 
+					<video
+						id="video"
+						class="video-js vjs-default-skin vjs-big-play-centered"
+						controls
+						preload="none"
+						poster="https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-272x380.jpg"
 						data-setup='{"techOrder": ["flash", "html5", "other supported tech"], "nativeControlsForTouch": true, "controlBar": { "muteToggle": false, "volumeControl": false, "timeDivider": true, "durationDisplay": true, "progressControl": true } }'
 						>
 						<source src="rtmp://35.186.157.217:1935/live/myStrem" type='rtmp/mp4'/>
@@ -373,7 +373,7 @@
 
 
 	 </div>
-	 
+
 </div>
 <!--=======footer=================================-->
 			<footer>
@@ -387,12 +387,11 @@
 
 <script type="text/javascript" src="https://livedemo00.template-help.com/wt_49105/js/owl.carousel.js"></script>
 <script src="//vjs.zencdn.net/5.11/video.min.js"></script>
-<script type="text/javascript" src="{{Module::asset('livestream:js/livestream.js')}}"></script>
 
  <script>
 	 $(document).ready(function(){
 		/*carousel*/
-		var owl = $("#owl1"); 
+		var owl = $("#owl1");
 		owl.owlCarousel({
 		items : 1, //10 items above 1000px browser width
 		itemsDesktop : [995,1], //5 items between 1000px and 901px
@@ -401,7 +400,7 @@
 		itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
 		navigation : true,
 		pagination :  false
-		});  
+		});
 
 		function myFocus(element){
 			if (element.value == element.defaultValue){
@@ -426,7 +425,7 @@
         )
 
 
- }); 
-			
+ });
+
  </script>
 </html>

@@ -31,7 +31,7 @@ body {
 	font-weight: 400;
 	/* 1em = 10px | 1.2em = 12px | 2em = 20px | etc. */
 	font-size: 0.9em;
-	color: #555555;	
+	color: #555555;
 	overflow-x: hidden;
 }
 p {
@@ -43,7 +43,7 @@ p {
 a, a:hover {
 	text-decoration:none;
 }
-a{ 
+a{
 	outline: 0!important;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -111,8 +111,8 @@ h6 {
 
 /*  Transitional elements
 ================================================== */
-header .navbar ul.nav li a 
-{ 
+header .navbar ul.nav li a
+{
 	-webkit-transition: 0.3s all ease;
 	-moz-transition: 0.3s all ease;
 	-o-transition: 0.3s all ease;
@@ -146,7 +146,7 @@ header .topbar h1 {
 }
 header .topbar h1 > a {
 	text-indent: -99999px;
-	background-image: url("../img/logo.png");
+	/*background-image: url("../img/logo.png");*/
 	background-repeat: no-repeat;
 	display: block;
 	height: auto;
@@ -279,7 +279,7 @@ header .navbar ul.nav li a:hover{
 	margin: 0;
 }
 .navbar{
-	z-index: 500;	
+	z-index: 500;
 }
 /* Slider Section ------------------------------------*/
 section.sliderbox {
@@ -390,7 +390,7 @@ section.sliderbox {
 }
 .features .row {
 	margin-bottom:3%;
-} 
+}
 .features .fea {
 	text-align:center;
 }
@@ -418,7 +418,7 @@ section.sliderbox {
 }
 .features h4 {
 	font-size: 1.7em;
-	text-transform:uppercase; 
+	text-transform:uppercase;
 }
 
 
@@ -432,8 +432,8 @@ section.sliderbox {
 }
 #menu-gallery .grid figcaption a.btn{
     left: 19px;
-    right: 27px;  
-    position: absolute;  
+    right: 27px;
+    position: absolute;
 }
 .gallery .title h1 {
 	color:#263d5a;
@@ -722,7 +722,7 @@ section.testimonials {
 /* Teachers ------------------------------------*/
 .teachers{
     background-color: #e6e6e6;
-    padding-bottom: 2%; 
+    padding-bottom: 2%;
 }
 .teachers .title h1{
     color: #263d5a;
@@ -1169,7 +1169,7 @@ footer .copyright ul li:hover a{
 	width: auto;
 }
 
-.scrollup:hover { 
+.scrollup:hover {
 	opacity: 0.7;
 }
 
@@ -1270,12 +1270,3 @@ footer .copyright ul li:hover a{
 
 
 /**********************end effect**************************/
-
-
-
-
-
-
-
-
-

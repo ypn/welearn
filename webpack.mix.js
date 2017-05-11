@@ -1,5 +1,6 @@
 const { mix } = require('laravel-mix');
 
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -15,5 +16,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    //Live stream module assets
    .js('Modules/Livestream/Assets/js/livestream.js','public/modules/livestream/js')
-   .react('Modules/Livestream/Assets/js/components/Chat.jsx','public/modules/livestream/js/components');
+   .react('Modules/Livestream/Assets/js/components/Chat.jsx','public/modules/livestream/js/components')
+
+   //Assets of module user
+
+   .sass('Modules/User/Assets/sass/master.scss','public/modules/user/css')
    ;

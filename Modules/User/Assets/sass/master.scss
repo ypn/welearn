@@ -1,0 +1,115 @@
+/*
+*Author:Phạm Như Ý
+*Created at: 14/5/2017
+*module:user
+*/
+
+body{
+  background:#f1f1f1;
+}
+
+.wln-stream-preview {
+  background: url('WSE-Product-1500x500.jpg');
+  .box-wrapper{
+    background: rgba(27,27,27,0.7);
+  }
+  .box-2{
+    color: rgba(255,255,255,0.8);
+    .class-ownner-info{
+      display: inline-flex;
+      padding-top: 30px;
+
+      .teacher-img img{
+        width: 49px;
+        height: 49px;
+        border-radius: 50%;
+      }
+      .info{
+        margin-left: 15px;
+        span{
+          color: #b19dd8;
+        }
+      }
+      .info h4{
+        margin: 0 0 5px;
+
+      }
+    }
+  }
+}
+.section{
+  background: #fff;
+  box-shadow: 3px 3px 3px #bbb;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 1px;
+  margin-bottom: 15px;
+}
+.figure_video{
+  padding-bottom: 20px;
+  .lesson-title a{
+    font-weight: bold;
+  }
+  .lesson-teacher a,.total-student{
+    color: #767676;
+  }
+  .total-student{
+    font-size: 11px;
+  }
+  .img-polaroid{
+    position: relative;
+    img{
+      width: 100%;
+      height: auto;
+    }
+    .bagg{
+      position:absolute;
+      color: #fff;
+      top:5px;
+      right:5px;
+      background:#d9534f;
+      padding:2px;
+      border-radius:5%;
+    }
+  }
+
+}
+
+#video{
+  .vjs-poster{
+    background-size: cover;
+  }
+}
+
+.wln-nav{
+  background: #ededed;
+  .active{
+    a{
+      background:#D9DEE4!important;
+    }
+  }
+  li a{
+    line-height: 29px;
+    &:hover{
+      background:#D9DEE4!important;
+    }
+  }
+
+  .dropdown-menu{
+    width:300px;
+    border-radius:0;
+    padding:15px;
+
+    ul{
+      margin:0;
+      padding:0;
+      list-style-type:none;
+
+      .image img{
+        width: 29px;
+        border-radius: 5%;
+      }
+    }
+  }
+
+}

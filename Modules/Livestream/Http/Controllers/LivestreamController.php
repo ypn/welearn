@@ -5,6 +5,7 @@ namespace Modules\Livestream\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\App;
 
 class LivestreamController extends Controller
 {
@@ -14,7 +15,7 @@ class LivestreamController extends Controller
      */
     public function index()
     {
-        return view('livestream::layouts.channel');
+        return view('livestream::layouts.home');
     }
 
     public function home(){
