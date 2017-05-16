@@ -15,7 +15,7 @@
   						poster="http://www.hdwallpaper.nu/wp-content/uploads/2015/02/keep_calm_and_sleep.jpg"
   						data-setup='{"techOrder": ["html5","flash","other supported tech"], "nativeControlsForTouch": true, "controlBar": { "muteToggle": false, "volumeControl": false, "timeDivider": true, "durationDisplay": true, "progressControl": true } }'
   						>
-  						<source src="rtmp://35.186.157.217:1935/vod/mp4:sample.mp4" type='rtmp/mp4'/>
+  						<source src="rtmp://35.186.157.217:1935/live/myStream" type='rtmp/mp4'/>
   					</video>
 					</div>
 				</div>
