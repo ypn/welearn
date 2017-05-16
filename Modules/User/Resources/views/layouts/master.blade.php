@@ -15,7 +15,7 @@
     <!-- Custom Theme Style -->
     <link href="//vjs.zencdn.net/5.11/video-js.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{Module::asset('user:css/master.css')}}">
-
+    @yield('style')
 
   </head>
 
@@ -27,14 +27,14 @@
       <div class="container">
         <ul class="nav navbar-nav">
           <li>
-            <a href="javascript:void();" data-toggle="dropdown" class="dropdown-toggle"><img src="img/logo.png" style="width:54px;" alt=""></a>
+            <a href="javascript:void();" data-toggle="dropdown" class="dropdown-toggle"><img src="/img/logo.png" style="width:54px;" alt=""></a>
             <div class="dropdown-menu list-notice">
               <ul
                 <li><a href="#">Trang chủ</a></li>
                 <li><a href="#">Blogs</a></li>
                 <li><a href="#">Danh sách khóa học</a></li>
                 <li><a href="#">Danh sách giảng viên</a></li>
-                <li><a href="#">Trở thành giảng viên</a></li>
+                <li><a href="/user/register-as-trainer">Trở thành giảng viên</a></li>
               </ul>
             </div>
           </li>
@@ -70,7 +70,7 @@
                 <li>
                   <div>
                     <a href="javascript:void();" onclick="document.getElementById('form-log-out').submit();">
-                      <form action="user/logout" method="post" id="form-log-out">
+                      <form action="/user/logout" method="post" id="form-log-out">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                       </form>Đăng xuất
                     </a>
@@ -87,3 +87,10 @@
   <main>
   @yield('content')
   </main>
+  <!-- jQuery -->
+  <script type="text/javascript" src="{{Module::asset('livestream:js/jquery.js')}}"></script>
+  <!-- Bootstrap -->
+  <script src="{{Module::asset('user:vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+  @yield('script')
+  </body>
+  </html>

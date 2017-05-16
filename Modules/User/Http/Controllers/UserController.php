@@ -12,8 +12,6 @@ use Validator;
 
 class UserController extends BaseController
 {
-
-
     /**
      * Show the form for creating a new resource.
      * @return Response
@@ -75,7 +73,6 @@ class UserController extends BaseController
 
       $validator = validator::make($input,$rule);
 
-
       if($validator->fails()){
         echo $validator->messages();
       }
@@ -84,9 +81,10 @@ class UserController extends BaseController
           'email'=>$input['email'],
           'password'=>$input['password']
         ]);
-
         if($auth){
           return redirect('/');
+        }else{
+          echo "invalid email or password";
         }
       }
 

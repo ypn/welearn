@@ -23,6 +23,7 @@ class UserServiceProvider extends ServiceProvider
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
+        View()->composer('user::layouts.master','Modules\User\ViewComposers\UserComposer');
     }
 
     /**
