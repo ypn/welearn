@@ -1,0 +1,94 @@
+/* **********************************************
+     Begin wlnstepper.js
+     Author:PhamNhuY
+     Created at:14/5/2017
+********************************************** */
+
+$step_main_color:#ddd;
+$step_active_color:#5cbfb1;
+$step_size:25px;
+
+.prefix{
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  left:0;
+  content: '';
+}
+
+.wln-stepper{
+  .stepper-wrapper{
+    width: 100%;
+    margin: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size:0;
+
+  .stepper-content{
+      position: relative;
+      .stepper-item{
+        width: 100%;
+        display: inline-block;
+      }
+    }
+  }
+
+  .step-dot{
+  text-align: center;
+  margin-bottom: 15px;
+  ul{
+      padding: 0;
+      margin: auto;
+      li{
+        list-style-type: none;
+        position: relative;
+        display: inline-block;
+
+        &:before{
+          @extend .prefix;
+          background: #ddd;
+          width: 100%;
+        }
+
+        &:after{
+          @extend .prefix;
+          width: 0;
+          transition: all 0.5s;
+        }
+
+        .step{
+          width: $step_size;
+          height: $step_size;
+          background: $step_main_color;
+          border-radius: 50%;
+          display: inline-block;
+          transition: all 0.5s;
+          position: relative;
+
+          i{
+            transform: scale(0,0);
+            line-height: $step_size;
+            transition: all 0.5s;
+            color: #fff;
+            z-index: 1;
+          }
+        }
+      }
+
+      li.active{
+        &:after{
+          width: 100%;
+          background: $step_active_color;
+        }
+
+        .step{
+          background: $step_active_color;
+        }
+
+        i{
+          transform: scale(0.5,0.5);
+        }
+      }
+    }
+  }
+}

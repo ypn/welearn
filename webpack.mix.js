@@ -12,13 +12,13 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css')
+mix//.js('resources/assets/js/app.js', 'public/js')
+   //.sass('resources/assets/sass/app.scss', 'public/css')
    //Live stream module assets
-   .js('Modules/Livestream/Assets/js/livestream.js','public/modules/livestream/js')
-   .react('Modules/Livestream/Assets/js/components/Chat.jsx','public/modules/livestream/js/components')
+   //.js('Modules/Livestream/Assets/js/livestream.js','public/modules/livestream/js')
+   //.react('Modules/Livestream/Assets/js/components/Chat.jsx','public/modules/livestream/js/components')
 
    //Assets of module user
-
-   .sass('Modules/User/Assets/sass/master.scss','public/modules/user/css')
+   //.sass('Modules/User/Assets/sass/master.scss','public/modules/user/css')
+   .js('Modules/User/Assets/build/js/user.master.js','public/modules/user/build/js')
    ;

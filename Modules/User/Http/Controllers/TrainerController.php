@@ -1,0 +1,143 @@
+<?php
+
+namespace Modules\User\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Controller;
+use Illuminate\Database\QueryException;
+use Cartalyst\Sentinel\Users\EloquentUser as Users;
+
+use Modules\User\Entities\Teachers;
+use Validator,DB,Sentinel;
+use Carbon\Carbon;
+
+class TrainerController extends Controller
+{
+    /**
+     * register to become a teacher
+     * @return Response
+     */
+    public function index()
+    {
+
+    }
+
+    /**
+     * Show the form for creating a new teacher.
+     * @return Response
+     */
+    public function create()
+    {
+        return view('user::layouts.form_register_trainer');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * @param  Request $request
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+      $inputs = $request->all();
+      $rules = [
+        'opinion'=>'required',
+        'first_name'=>'required|max:255',
+        'last_name'=>'required|max:255',
+        'email'=>'required|email|max:255',
+        'phone'=>'required|max:20',
+        'sex'=>'between:1,2',
+        'birthday'=>'required|date',
+        'company'=>'required|max:255',
+        'location'=>'required|max:500',
+        'short_desc'=>'max:500',
+        'field'=>'required|max:255',
+        'detail_information'=>'required'
+      ];
+
+      $validator = Validator::make($inputs,$rules);
+
+      if($validator->fails()){
+        echo $validator->message();
+      }else{
+        if(!isset($input['opinion']) && $inputs['opinion']){
+          try{
+            $user = Sentinel::getUser();
+            if(!empty($user)){
+              //Cập nhật bảng users
+              $user->phone = $this->cleanInput($inputs['phone']);
+              $user->birthday = Carbon::createFromFormat('d/m/Y', $this->cleanInput($inputs['birthday']));
+              $user->location = $this->cleanInput($inputs['location']);
+              $user->sex = $this->cleanInput($inputs['sex']);
+
+              //Lưu vào bảng teachers
+              $teacher = new Teachers();
+              $teacher->uid = $user->id;
+              $teacher->company = $this->cleanInput($inputs['company']);
+              $teacher->expertise = $this->cleanInput($inputs['field']);
+              $teacher->short_desc = $this->cleanInput($inputs['short_desc']);
+
+              //Trường này cần làm sạch dữ liệu đầu vào, loại bỏ các thẻ scrip
+              $teacher->detail_desc = isset($inputs['detail_information']) ? $inputs['detail_information'] : null;
+
+              DB::beginTransaction();
+              $user->save();
+              $teacher->save();
+              DB::commit();
+
+              return json_encode(['code'=>201,'message'=>'create teacher success']);
+
+            }else{
+              return json_encode(['code'=>999,'message'=>'user not existed']);
+            }
+          }
+          catch(QueryException $e){
+            DB::rollback();
+            return $e->getMessage();
+          }catch(\Exception $e){
+            DB::rollback();
+            return $e->getMessage();
+          }
+        }
+      }
+    }
+
+    private function cleanInput($input){
+      return isset($input) ? trim(strip_tags($input)) : null;
+    }
+
+    /**
+     * Show the specified resource.
+     * @return Response
+     */
+    public function show()
+    {
+        return view('user::show');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * @return Response
+     */
+    public function edit()
+    {
+        return view('user::edit');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     * @param  Request $request
+     * @return Response
+     */
+    public function update(Request $request)
+    {
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * @return Response
+     */
+    public function destroy()
+    {
+    }
+}

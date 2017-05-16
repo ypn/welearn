@@ -1,7 +1,3 @@
 {
-  "/modules/livestream/js/components/Chat.js": "/modules/livestream/js/components/Chat.js",
-  "/js/app.js": "/js/app.js",
-  "/css/app.css": "/css/app.css",
-  "/modules/user/css/master.css": "/modules/user/css/master.css",
-  "/modules/livestream/js/livestream.js": "/modules/livestream/js/livestream.js"
+  "/modules/user/build/js/user.master.js": "/modules/user/build/js/user.master.js"
 }

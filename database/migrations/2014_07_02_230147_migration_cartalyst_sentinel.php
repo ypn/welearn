@@ -101,16 +101,23 @@ class MigrationCartalystSentinel extends Migration
             $table->timestamp('last_login')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->string('picture')->nullable();//profile image
+
+            //Addition information
+            $table->string('picture')->nullable();//profile image facebook
             $table->string('location')->nullable();
             $table->tinyInteger('education_level')->nullable();//Trình độ học vấn hiện tại
             $table->tinyInteger('field_wanted')->nullable();//Lĩnh vực học hoặc giảng dạy
             $table->string('phone')->nullable();
+            $table->string('fb_id')->nullable();
+            $table->tinyInteger('sex')->nullable();//1-male # 2-female
+            $table->date('birthday')->nullable();
             $table->string('cover')->nullable();//cover image
             $table->tinyInteger('type_society')->nullable();//1-fb , 2 -gg
+
             $table->timestamps();
             $table->engine = 'InnoDB';
             $table->unique('email');
+            $table->unique('fb_id');
         });
     }
 

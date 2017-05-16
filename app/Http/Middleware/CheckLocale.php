@@ -18,6 +18,7 @@ class CheckLocale
      */
     public function handle($request, Closure $next)
     {
+      
         $locale = Cookie::get('lang');
         if($locale!=null){
             App::setLocale($locale);

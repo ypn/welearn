@@ -16,12 +16,26 @@ class MigrationWelearnSchemas extends Migration
         //Lưu trữ thông tin giảng viên
         Schema::create('teachers',function(Blueprint $table){
           $table->increments('id');
-          $table->integer('uid');
-          $table->tinyInteger('type')->nullable();
-          $table->text('profile')->nullable();
+          $table->integer('uid');//khóa ngoại tham chiếu tới id trong bảng user.
+          $table->tinyInteger('type')->nullable();//gồm 3 kiểu: giáo viện tự do - đối tác cá nhân - đối tác tổ chức.
+          $table->tinyInteger('status')->nullable();//trạng thái giảng viên: đang giảng dạy - đã thôi dạy...
+          $table->string('company')->nullable();//Công ty làm việc
+          $table->string('position')->nullable();//Vị trí công việc hiện tại
+          $table->string('expertise')->nullable();//Chuyên môn
+          $table->text('short_desc')->nullable();//Giới thiệu qua về bản thân
+          $table->text('detail_desc')->nullable();//Giới thiệu chi tiết
+
+          //Related information
+          $table->string('fb')->nullable();//đường dẫn tới trang facebook cá nhân.
+          $table->string('yt')->nullable();//đường dẫn tới kênh youtube.
+          $table->string('web')->nullable();//đường dẫn tời website cá nhân.
+          $table->string('video')->nullable();//đường dẫn tới video giới thiệu trên youtube.
           $table->timestamps();
 
           $table->engine = 'InnoDB';
+          $table->unique ('uid');//Tham chiếu 1:1 tới bảng user
+
+
         });
 
         //Lưu trữ thông tin học viên

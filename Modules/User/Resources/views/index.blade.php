@@ -1,4 +1,26 @@
 @extends('user::layouts.master')
+@section('script')
+<!-- Videojs -->
+<script src="//vjs.zencdn.net/5.11/video.min.js"></script>
+<script type="text/javascript">
+(function(){
+  console.log('cc');
+  var player = videojs('video');
+  player.on('pause', function() {
+    this.bigPlayButton.show();
+
+    // Now the issue is that we need to hide it again if we start playing
+    // So every time we do this, we can create a one-time listener for play events.
+    player.one('play', function() {
+      this.bigPlayButton.hide();
+      this.load();
+      this.off('play');
+    });
+  });
+  player.play();
+})();
+</script>
+@stop
 @section('content')
 <!-- Stream preview -->
 <div class="wln-stream-preview">
@@ -7,16 +29,27 @@
 
 				<div class="col-md-8">
 					<div>
-				    <video
+				    <!-- <video
   						id="video"
   						class="video-js vjs-default-skin vjs-16-9 vjs-big-play-centered"
   						controls
   						preload="none"
   						poster="http://www.hdwallpaper.nu/wp-content/uploads/2015/02/keep_calm_and_sleep.jpg"
-  						data-setup='{"techOrder": ["html5","flash","other supported tech"], "nativeControlsForTouch": true, "controlBar": { "muteToggle": false, "volumeControl": false, "timeDivider": true, "durationDisplay": true, "progressControl": true } }'
+  						data-setup='{"techOrder": ["flash","html5","other supported tech"], "nativeControlsForTouch": true, "controlBar": { "muteToggle": false, "volumeControl": false, "timeDivider": true, "durationDisplay": true, "progressControl": true } }'
   						>
-  						<source src="rtmp://35.186.157.217:1935/vod/mp4:sample.mp4" type='rtmp/mp4'/>
-  					</video>
+  						<source src="rtmp://35.186.157.217:1935/myStream" type='rtmp/mp4'/>
+  					</video> -->
+
+            <video
+              id="video"
+              class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9"
+              controls
+              preload="none"
+              poster="http://www.hdwallpaper.nu/wp-content/uploads/2015/02/keep_calm_and_sleep.jpg"
+              data-setup='{"techOrder": ["flash", "html5", "other supported tech"], "nativeControlsForTouch": true, "controlBar": { "muteToggle": false, "volumeControl": false, "timeDivider": false, "durationDisplay": false, "progressControl": false } }'
+              >
+              <source src="rtmp://35.186.157.217:1935/live/myStream" type='rtmp/videos'/>
+            </video>
 					</div>
 				</div>
 
@@ -124,17 +157,6 @@
 		</div>
   </section>
 
-  <h1>Helo World</h1>
 </div>
 <!-- end current class online -->
-
-<!-- jQuery -->
-<script type="text/javascript" src="{{Module::asset('livestream:js/jquery.js')}}"></script>
-<!-- Bootstrap -->
-<script src="{{Module::asset('user:vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<!-- Videojs -->
-<script src="//vjs.zencdn.net/5.11/video.min.js"></script>
-</body>
-</html>
 @stop

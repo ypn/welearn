@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/', 'Controller@index')->middleware('locale');
+Route::get('/', 'Controller@index');
 Route::get('/locale/{locale}','Controller@setLocale');

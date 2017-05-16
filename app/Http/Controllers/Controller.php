@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Sentinel;
+use Illuminate\Support\Facades\App;
 
 class Controller extends BaseController
 {
@@ -17,7 +18,8 @@ class Controller extends BaseController
 
     public function setLocale(Request $request){
       $locale = $request->locale;
-      return response('set_cookie')->cookie('lang',$locale,30);
+      App::setLocale($locale);
+      return response('set_cookie')->cookie('lang',$locale,30,null,null,null,false);
     }
 
     public function index(){
