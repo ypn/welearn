@@ -29,26 +29,15 @@
 
 				<div class="col-md-8">
 					<div>
-				    <!-- <video
-  						id="video"
-  						class="video-js vjs-default-skin vjs-16-9 vjs-big-play-centered"
-  						controls
-  						preload="none"
-  						poster="http://www.hdwallpaper.nu/wp-content/uploads/2015/02/keep_calm_and_sleep.jpg"
-  						data-setup='{"techOrder": ["flash","html5","other supported tech"], "nativeControlsForTouch": true, "controlBar": { "muteToggle": false, "volumeControl": false, "timeDivider": true, "durationDisplay": true, "progressControl": true } }'
-  						>
-  						<source src="rtmp://35.186.157.217:1935/myStream" type='rtmp/mp4'/>
-  					</video> -->
-
+				   
             <video
-              id="video"
+             id="video"
               class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9"
               controls
               preload="none"
               poster="http://www.hdwallpaper.nu/wp-content/uploads/2015/02/keep_calm_and_sleep.jpg"
               data-setup='{"techOrder": ["flash", "html5", "other supported tech"], "nativeControlsForTouch": true, "controlBar": { "muteToggle": false, "volumeControl": false, "timeDivider": false, "durationDisplay": false, "progressControl": false } }'
-              >
-              <source src="rtmp://35.186.157.217:1935/live/myStream" type='rtmp/videos'/>
+              >              <source src="rtmp://35.186.157.217:1935/live/myStream" type='rtmp/videos'/>
             </video>
 					</div>
 				</div>
