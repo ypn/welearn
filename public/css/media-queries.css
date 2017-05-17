@@ -109,7 +109,7 @@
 
 @media handheld, only screen and (max-width: 1024px) {
 	/* Header ------------------------------------------*/
-	#requestShowing { 
+	#requestShowing {
 	   display: none;
 	}
     .content_map{
@@ -147,21 +147,21 @@
 @media handheld, only screen and (max-width: 767px) {
     body {
         padding: 0!important;
-    }    
+    }
     header .navbar {
         margin: 0 !important;
     }
-    header nav ul li a { 
+    header nav ul li a {
         line-height: 25px;
     }
-	.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a { 
+	.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
 		padding:5px 0 5px 20px;
 		font-weight:300;
 		line-height:28px;
 	}
     section.sliderbox{
         padding-top: 180px;
-    }		
+    }
     .content_map{
         height: 500px;
         position: relative;
@@ -170,7 +170,7 @@
     .contact .course-form-box{
         margin: 0;
     }
-    #requestShowing { 
+    #requestShowing {
         display: none;
     }
     .theme-default{
@@ -194,7 +194,7 @@
     .theme-default .nivo-caption{
         font-size: 13px;
     }
-}	
+}
 /* ---------------------------------------------------------------------- */
 /*	Mobile Version 480px
 /* ---------------------------------------------------------------------- */
@@ -214,21 +214,5 @@
     .pricing_table .item{
         width: 100%;
     }
-    
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

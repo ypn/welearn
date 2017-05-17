@@ -9,8 +9,8 @@
 	scrollThreshold: 0.25,
 	scrollOffset: 177
 	});
-         
-       
+
+
 
 
 
@@ -83,31 +83,6 @@
          }
      });
 
-
-
-
-/*------------------------------------ Google Map ---------------------------------------------------------------*/
-    if ($('#map').length) {
-        
-        var map;
-        map = new GMaps({
-            div: '#map',
-            lat: 41.8902624,
-            lng: 12.4923096
-        });
-
-        map.addMarker({
-            lat: 41.8902624,
-            lng: 12.4923096,
-            title: 'Contanct',
-            infoWindow: {
-                content: '15rd Avenue, New York,<br /> 156408, US<br /> <br /> Email: info@company.com <br /> Web: company.com'
-            }
-        });
-
-    }
-
-
 /*------------------------------------ Bxslider ---------------------------------------------------------------*/
      $('.bxslider').bxSlider({
          minSlides: 2,
@@ -124,10 +99,10 @@
          nextText:'next',
          prevText:'prev'
      });
-	
-	
-	
-	
+
+
+
+
 
 
 /*---------------------------------------------------------------- Responsive Video -------------------------------*/
@@ -135,7 +110,7 @@
     $(".video").fitVids();
 
 
-	
-	
-	   
+
+
+
 });
