@@ -23,12 +23,29 @@ $step_size:25px;
     white-space: nowrap;
     overflow: hidden;
     font-size:0;
+    border:1px solid #ddd;
 
   .stepper-content{
       position: relative;
       .stepper-item{
         width: 100%;
         display: inline-block;
+        white-space:pre;
+        .box{
+          height: 470px;
+          overflow-y:auto;
+          white-space: normal;
+          background:#fff;
+          font-size:15px;
+        }
+        .box.document{
+          padding: 0 100px;
+          text-align:justify;
+          h3{
+              text-align:center;
+          }
+        }
+
       }
     }
   }

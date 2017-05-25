@@ -196,12 +196,12 @@ class UserController extends BaseController
    }
 
     /*
-     * Show the specified resource.
+     * Show the manager page of user.
      * @return Response
      */
     public function show()
     {
-        return view('user::show');
+        return view('user::layouts.dashboard.profile');
     }
 
     /**

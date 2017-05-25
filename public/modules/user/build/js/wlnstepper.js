@@ -153,6 +153,12 @@ jQuery.extend(jQuery.validator.messages, {
         },
         location:{
           required:true
+        },
+        field:{
+          required:true,
+        },
+        detail_information:{
+          required:true,
         }
       },
       messages:{

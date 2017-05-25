@@ -39,7 +39,12 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
+
+      $response = array('code'=>null,'message'=>null);
       $inputs = $request->all();
+
+
+      //Validate dữ liệu đầu vào
       $rules = [
         'opinion'=>'required',
         'first_name'=>'required|max:255',
@@ -58,7 +63,8 @@ class TrainerController extends Controller
       $validator = Validator::make($inputs,$rules);
 
       if($validator->fails()){
-        echo $validator->message();
+        $response = array('code'=>100,'message'=>$validator->messages());
+
       }else{
         if(!isset($input['opinion']) && $inputs['opinion']){
           try{
@@ -77,7 +83,7 @@ class TrainerController extends Controller
               $teacher->expertise = $this->cleanInput($inputs['field']);
               $teacher->short_desc = $this->cleanInput($inputs['short_desc']);
 
-              //Trường này cần làm sạch dữ liệu đầu vào, loại bỏ các thẻ scrip
+              //Trường này cần làm sạch dữ liệu đầu vào, loại bỏ các thẻ script
               $teacher->detail_desc = isset($inputs['detail_information']) ? $inputs['detail_information'] : null;
 
               DB::beginTransaction();
@@ -85,21 +91,27 @@ class TrainerController extends Controller
               $teacher->save();
               DB::commit();
 
-              return json_encode(['code'=>201,'message'=>'create teacher success']);
+              $response =  array('code'=>201,'message'=>'create teacher success');
 
             }else{
-              return json_encode(['code'=>999,'message'=>'user not existed']);
+              $response = array('code'=>999,'message'=>'user not existed');
             }
+
           }
           catch(QueryException $e){
             DB::rollback();
-            return $e->getMessage();
+            if($e->getCode()==23000){
+              $response =   array('code'=>23000,'message'=>'teacher existed');
+            }
+            $e->getMessage();
           }catch(\Exception $e){
             DB::rollback();
-            return $e->getMessage();
+            $response =   array('code'=>992,'message'=>'unknown error');
           }
         }
       }
+
+      return view ('user::active_email')->with('response',$response);
     }
 
     private function cleanInput($input){

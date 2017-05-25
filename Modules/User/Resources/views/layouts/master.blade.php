@@ -6,12 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Togetther,we learn! Together, we conquer!</title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{Module::asset('user:vendors/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <!-- Font Awesome -->
-    <link href="{{Module::asset('user:vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="//vjs.zencdn.net/5.11/video-js.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{Module::asset('user:css/master.css')}}">
@@ -30,7 +30,7 @@
             <a href="javascript:void();" data-toggle="dropdown" class="dropdown-toggle"><img src="/img/logo.png" style="width:54px;" alt=""></a>
             <div class="dropdown-menu list-notice">
               <ul
-                <li><a href="#">Trang chủ</a></li>
+                <li><a href="/">Trang chủ</a></li>
                 <li><a href="#">Blogs</a></li>
                 <li><a href="#">Danh sách khóa học</a></li>
                 <li><a href="#">Danh sách giảng viên</a></li>
@@ -46,7 +46,7 @@
                 <li>
                   <a href="#">
                     <span class="image">
-                      <img src="modules/user/css/avatar_01.png" alt="">
+                      <img src="/modules/user/css/avatar_01.png" alt="">
                     </span>
                     <span style="font-size:12px;">
                       <span>{{$user['name']}}</span>
@@ -66,7 +66,7 @@
 
             <div class="dropdown-menu">
               <ul>
-                <li><a href="#">Trang quản lý</a></li>
+                <li><a href="/user/dashboard">Trang quản lý</a></li>
                 <li>
                   <div>
                     <a href="javascript:void();" onclick="document.getElementById('form-log-out').submit();">
@@ -87,10 +87,7 @@
   <main>
   @yield('content')
   </main>
-  <!-- jQuery -->
-  <script type="text/javascript" src="{{Module::asset('livestream:js/jquery.js')}}"></script>
-  <!-- Bootstrap -->
-  <script src="{{Module::asset('user:vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+  <script src="/js/app.js"></script>
   @yield('script')
   </body>
   </html>

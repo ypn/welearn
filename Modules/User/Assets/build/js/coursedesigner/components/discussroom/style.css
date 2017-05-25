@@ -1,0 +1,93 @@
+.wln-discuss-room ul.nav-tabs a,
+.wln-discuss-room ul.nav-tabs a:hover,
+.wln-discuss-room ul.nav-tabs a:focus{
+  border-radius: 0;
+  border: none;
+  color: #34495e;
+  margin-right: 0;
+}
+
+.wln-discuss-room ul.nav-tabs li{
+  width: 50%;
+}
+.wln-discuss-room ul.nav-tabs li.active a{
+  background: #34495e;
+  color: #fff;
+}
+.list-message{
+  height:400px;
+  overflow-y: scroll;
+  padding:10px;
+}
+.entry-emoji{
+  font-size: 20px;
+}
+.message-item{
+  margin: 5px 0;
+  display: inline-flex;
+}
+
+.message{
+  margin-left: 10px;
+}
+
+.message .message-content{
+  font-size:13px;
+}
+
+label.user-name{
+  margin-right: 5px;
+  margin-bottom:0;
+  color:rgba(0,0,0,0.6);
+}
+.user-profile-picture{
+  border-radius: 50%;
+  width:40px;
+  height:40px;
+  object-fit: cover;
+}
+
+.flex{
+  display: inline-flex;
+  width:100%;
+}
+
+.entry-message-wrapper{
+  padding: 15px 10px;
+  background:rgba(52, 73, 94, 0.4);
+}
+
+.flex .entry-box{
+  width:100%;
+  margin-left: 10px;
+}
+.entry-message,.entry-message:focus{
+  border-top-color: rgba(0,0,0,0);
+  border-right-color: rgba(0,0,0,0);
+  border-left-color: rgba(0,0,0,0);
+  padding:5px;
+  border-radius: 0;
+  box-shadow: none;
+  overflow:hidden;
+  transition: all 0.2s;
+  resize: none;
+  background:rgb(173, 182, 190);
+}
+
+.entry-message::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:rgba(0,0,0,.4);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color:rgba(0,0,0,.4);
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color:rgba(0,0,0,.4);
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color:rgba(0,0,0,.4);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color:rgba(0,0,0,.4);
+}

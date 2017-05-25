@@ -2,10 +2,15 @@
 @section('script')
 <!-- Videojs -->
 <script src="//vjs.zencdn.net/5.11/video.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.5.3/videojs-contrib-hls.min.js"></script>
 <script type="text/javascript">
 (function(){
-  console.log('cc');
   var player = videojs('video');
+  player.src({
+    src: 'rtmp://35.186.157.217:1935/vod/mp4:sample.mp4',
+    type: 'video/rtmp',
+    withCredentials: true
+  });
   player.on('pause', function() {
     this.bigPlayButton.show();
 
@@ -29,16 +34,16 @@
 
 				<div class="col-md-8">
 					<div>
-				   
+
             <video
              id="video"
               class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9"
-              controls
+              controls ="false"
               preload="none"
               poster="http://www.hdwallpaper.nu/wp-content/uploads/2015/02/keep_calm_and_sleep.jpg"
-              data-setup='{"techOrder": ["flash", "html5", "other supported tech"], "nativeControlsForTouch": true, "controlBar": { "muteToggle": false, "volumeControl": false, "timeDivider": false, "durationDisplay": false, "progressControl": false } }'
-              >              <source src="rtmp://35.186.157.217:1935/live/myStream" type='rtmp/videos'/>
-            </video>
+              data-setup='{"techOrder": ["flash", "html5"], "nativeControlsForTouch": true, "controlBar": { "muteToggle": false, "volumeControl": false, "timeDivider": false, "durationDisplay": false, "progressControl": true } }'
+              />
+
 					</div>
 				</div>
 

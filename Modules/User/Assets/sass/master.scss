@@ -8,6 +8,21 @@
 
 body{
   background:#f1f1f1;
+  #detail_information{
+    height:100%;
+  }
+  .form-group.required .control-label:after {
+    content:" *";
+    color:red;
+  }
+  .error{
+    font-weight:normal;
+    color:red;
+  }
+  #short_desc{
+    resize:vertical;
+    height:80px;
+  }
 }
 
 .wln-stream-preview {

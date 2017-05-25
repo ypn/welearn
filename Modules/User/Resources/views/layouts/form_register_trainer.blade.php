@@ -9,47 +9,6 @@
 @section('style')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
 @stop
-<style media="screen">
-  #detail_information{
-  height:100%;
-}
-.form-group.required .control-label:after {
-  content:" *";
-  color:red;
-}
-.error{
-  font-weight:normal;
-  color:red;
-}
-#short_desc{
-  resize:vertical;
-  height:80px;
-}
-.box{
-  height: 470px;
-  overflow-y:auto;
-  white-space: normal;
-  background:#fff;
-  font-size:15px;
-}
-
-.document{
-  padding: 0 100px;
-  text-align:justify;
-}
-.document h3{
-  text-align:center;
-}
-
-
-.stepper-item{
-  white-space:pre;
-}
-.stepper-wrapper{
-    border:1px solid #ddd;
-}
-
-</style>
 @section('content')
 <div class="container">
   <div class="entry-information">
@@ -99,21 +58,21 @@
                   <div class="form-group required">
                     <label class="control-label col-md-2" for="first_name">@lang('landingpage.signin_signup.form_info.first_name')</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" name="first_name" id="first_name">
+                        <input type="text" class="form-control" name="first_name" readonly id="first_name" value="{{isset(Sentinel::getUser()->first_name) ? Sentinel::getUser()->first_name:''}}">
                     </div>
                   </div>
 
                   <div class="form-group required">
                     <label class="control-label col-md-2" for="last_name">@lang('landingpage.signin_signup.form_info.last_name')</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" name="last_name" id="last_name">
+                        <input type="text" class="form-control" name="last_name" id="last_name" readonly value="{{isset(Sentinel::getUser()->last_name) ? Sentinel::getUser()->last_name:''}}">
                     </div>
                   </div>
 
                   <div class="form-group required">
                     <label class="control-label col-md-2" for="email">@lang('landingpage.signin_signup.form_info.email')</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" name="email" id="email">
+                        <input type="text" class="form-control" name="email" id="email" readonly value="{{isset(Sentinel::getUser()->email) ? Sentinel::getUser()->email:''}}">
                     </div>
                   </div>
 
@@ -127,8 +86,8 @@
                   <div class="form-group required">
                     <label class="control-label col-md-2" for="birthday">@lang('form_register_trainer.basic_info.birthday')</label>
                     <div class="col-md-10">
-                      <div class="input-group date" data-provide="datepicker">
-                        <input type="text" name="birthday" id="birthday" onkeydown="return false" class="form-control">
+                      <div class="input-group">
+                        <input type="text" name="birthday" class="form-control date-picker" id="birthday" onkeydown="return false" value="{{isset(Sentinel::getUser()->birthday) ? date("d/m/Y",strtotime(Sentinel::getUser()->birthday)):''}}">
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-th"></span>
                         </div>

@@ -12,7 +12,7 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix//.js('resources/assets/js/app.js', 'public/js')
    //.sass('resources/assets/sass/bootstrap.scss', 'public/css')
    //Live stream module assets
   //  .js('Modules/Livestream/Assets/js/livestream.js','public/modules/livestream/js')
@@ -20,5 +20,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
    //Assets of module user
   //  .sass('Modules/User/Assets/sass/master.scss','public/modules/user/css')
-  //  .js('Modules/User/Assets/build/js/user.master.js','public/modules/user/build/js')
+  //  .js('Modules/User/Assets/build/js/user.master.js','public/modules/user/build/js'),
+  .react('Modules/User/Assets/build/js/coursedesigner/discuss-room.js','public/modules/user/build/js');
    ;
